@@ -1,0 +1,34 @@
+body{
+	background-color:#bbce31;	
+}
+#login
+{
+	width:400px; 
+	position: absolute;
+	top:250px;
+	left:500px;
+}
+fieldset{
+	box-shadow:3px 3px 6px black;
+	border-radius:5px;
+}
+legend{
+	background-color:green;
+	border-radius:5px;
+	width:100px;
+	text-align: center;
+}
+label{
+	width:100px;
+	display: block;
+	float: left;
+	height:25px;
+}
+br {
+	height:25px;
+	clear: both;
+	
+}
+span{
+	color:red; font-size:20px; font-weight:bold;
+}

@@ -7,9 +7,10 @@ class Gym_modelo extends CI_Model {
 		parent::__construct();
 		$this->load->database();
 	}
-	public function index()
+	public function buscapersona($datos)
 	{
-		
+		$consulta=$this->db->get_where('login',$datos);
+		return $consulta;
 	}
 		
 }

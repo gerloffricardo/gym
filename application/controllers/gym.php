@@ -19,11 +19,48 @@ class Gym extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('inicio');
+		$datos=array(
+			'mensaje'=>"",
+			
+			);
+		//creamos un array para recibir o pasar los datos
+		if($_POST)
+		{
+			$datos=array(
+			'usuario'=>$this->input->post('usuario'),
+			'clave'=>$this->input->post('clave'),
+			
+			);
+			//llamamos a la funcion en modelo
+			$resultado=$this->gym_modelo->buscapersona($datos);
+			
+			//verificamos si encontro resultados
+			if($resultado->result())
+			{
+				//encontro al usuario
+				$this->session->set_userdata('idusuario',$resultado->row()->idusuario);
+				
+				//aqui se puede cargar informacion adicional
+				//para llamar la pagina usamos this load view o redirect
+				redirect("index.php/Gym/bandeja");
+				
+			}
+			else
+			{
+				//no encontro
+				$datos=array(
+				'mensaje'=>"usuario incorrecto",
+			
+				);
+			}
+		}
+		
+		$this->load->view('inicio',$datos);
 	}
-		public function vermas()
+
+public function bandeja()
 	{
-		$this->load->view('welcome_message');
+		$this->load->view('bandeja');
 	}
 }
 
