@@ -62,6 +62,23 @@ public function bandeja()
 	{
 		$this->load->view('bandeja');
 	}
+	
+	public function novedades()
+	{
+		$this->load->view('novedades');
+	}
+	public function inscripcion()
+	{
+		$this->load->view('inscripcion');
+	}
+	public function consulta()
+	{
+		$this->load->view('consulta');
+	}
+	public function pago()
+	{
+		$this->load->view('pago');
+	}
 }
 
 /* End of file welcome.php */

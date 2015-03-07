@@ -1,0 +1,29 @@
+body{
+	background-color:#bbce31;	
+
+}
+#contenedor{
+	width:1000px;
+	height:700px;
+	margin:0 auto;
+	box-shadow:5px 5px 5px black;
+	
+}
+#encabezado{
+	height:80px;
+	background-color:#ecf10e;
+}
+#menu1{
+	width:200px;
+	border:1px solid black;
+	height:610px;
+	float: left;
+	margin-right:5px;
+	
+}
+#menu2{
+	width:790px;
+	border:1px solid black;
+	height:610px;
+	float: left;
+}
