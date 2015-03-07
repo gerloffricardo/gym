@@ -69,11 +69,63 @@ public function bandeja()
 	}
 	public function inscripcion()
 	{
-		$this->load->view('inscripcion');
+	    if($_POST)
+		{
+			if(isset($_POST['btninscripto']))
+			{
+				$datos=array(
+			'idusuario'=>$this->input->post('idusuario'),
+			'idclase'=>$this->input->post('idclase'),
+			'fecha'=>$this->input->post('fecha'),
+			'pagado'=>$this->input->post('pagado'),
+			
+			);	
+			$resultado=$this->gym_modelo->insertarusuario($datos);
+			}
+			
+			if(isset($_POST['btnaviso']))
+			{
+				$datos=array(
+			'idusuario'=>$this->input->post('idusuario'),
+			'pagado'=>$this->input->post('pagado'),
+			
+			);	
+			$resultado=$this->gym_modelo->informarpago($datos);
+			}
+		
+		}
+		$datos=array(
+				'mensaje'=>"",
+			    'usuarios'=>$this->gym_modelo->traeusuarios(),
+				'clases'=>$this->gym_modelo->traeclases(),
+				'inscriptos'=>$this->gym_modelo->traerinscriptos(),
+			
+				);
+		
+		$this->load->view('inscripcion',$datos);
 	}
 	public function consulta()
 	{
-		$this->load->view('consulta');
+		$datos=array(
+				'mensaje'=>"",
+			    'infousuario'=>$this->gym_modelo->infousuario("sdfasdfasfds"),
+				
+			
+				);
+		if($_POST)
+		{
+		
+			$usuario=$this->input->post('usuario');
+			$datos=array(
+				'mensaje'=>"",
+			    'infousuario'=>$this->gym_modelo->infousuario($usuario),
+				
+			
+				);	
+			
+		}
+		
+		$this->load->view('consulta',$datos);
 	}
 	public function pago()
 	{

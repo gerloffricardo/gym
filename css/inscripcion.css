@@ -1,0 +1,19 @@
+table
+{
+	text-align: center;
+}
+#pagado 
+{
+	background-color:green;
+	color:white;
+}
+#nopagado
+{
+	background-color:red;
+	color:white;
+}
+label
+{
+	display: block;
+	width:150px;
+}

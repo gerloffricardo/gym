@@ -9,7 +9,7 @@
 	<body>
 		<div id="contenedor">
 			<div id="encabezado">
-			foto
+			<img src="<?php echo base_url("img/banner.jpg") ?>"/>
 			</div>
 			<div id="menu1">
 				<fieldset>
@@ -17,7 +17,7 @@
 				<ul>
 				<li><a href="<?php echo site_url("index.php/Gym/inscripcion") ?>" target="centro">insripcion</a></li>
 				<li><a href="<?php echo site_url("index.php/Gym/consulta") ?>" target="centro">consulta</a></li>
-				<li><a href="<?php echo site_url("index.php/Gym/pago") ?>" target="centro">avisarpago</a></li>
+				
 				<li><a href="<?php echo site_url("index.php/Gym/novedades") ?>" target="centro">novedades</a></li>
 				</ul>
 				</fieldset>
